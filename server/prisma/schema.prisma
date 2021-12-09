@@ -30,13 +30,13 @@ model User {
   received_events_url String @unique
   type                String @unique
   site_admin          String @unique
-  name                String @unique
-  company             String @unique
+  name                String
+  company             String
   blog                String @unique
-  location            String @unique
+  location            String
   email               String @unique
   hireable            String @unique
-  bio                 String @unique
+  bio                 String
   twitter_username    String @unique
   public_repos        Int
   public_gists        Int
