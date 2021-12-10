@@ -19,8 +19,8 @@ model User {
   gravatar_id         String @unique
   url                 String @unique
   html_url            String @unique
-  followers_url       String @unique
-  following_url       String @unique
+  followers_url       String
+  following_url       String
   gists_url           String @unique
   starred_url         String @unique
   subscriptions_url   String @unique
@@ -28,7 +28,7 @@ model User {
   repos_url           String @unique
   events_url          String @unique
   received_events_url String @unique
-  type                String @unique
+  type                String
   site_admin          String @unique
   name                String
   company             String

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TextInput, Button } from "react-native";
 
 export default function App() {
   const [username, setUsername] = useState("");
@@ -7,29 +7,24 @@ export default function App() {
 
   async function searchUser() {
     try {
-      const response = await fetch(`http://localhost:4242/api/users/${username}`);
+      const response = await fetch(
+        `http://localhost:4242/api/users/${username}`
+      );
       const user = await response.json();
       setUser(user);
       console.log(user);
     } catch (error) {
       console.log(error.message);
-    }  
-
+    }
   }
 
   return (
     <View style={styles.container}>
       <Text>Username:</Text>
-      <br/>
-      <TextInput
-        onChangeText={setUsername}
-        value={username}
-      />
-      <br/>
-      <Button
-        onPress={searchUser}
-        title="Search"
-      />
+      <br />
+      <TextInput onChangeText={setUsername} value={username} />
+      <br />
+      <Button onPress={searchUser} title="Search" />
       <Text>{user.username}</Text>
     </View>
   );
@@ -38,8 +33,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
