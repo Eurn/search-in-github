@@ -11,37 +11,36 @@ generator client {
 }
 
 model User {
-  login               String @unique
-  id                  Int    @id
-  username            String @unique
-  node_id             String @unique
-  avatar_url          String @unique
-  gravatar_id         String @unique
-  url                 String @unique
-  html_url            String @unique
+  login               String  @unique
+  id                  Int     @id
+  node_id             String
+  avatar_url          String
+  gravatar_id         String
+  url                 String
+  html_url            String
   followers_url       String
   following_url       String
-  gists_url           String @unique
-  starred_url         String @unique
-  subscriptions_url   String @unique
-  organizations_url   String @unique
-  repos_url           String @unique
-  events_url          String @unique
-  received_events_url String @unique
+  gists_url           String
+  starred_url         String
+  subscriptions_url   String
+  organizations_url   String
+  repos_url           String
+  events_url          String
+  received_events_url String
   type                String
-  site_admin          String @unique
-  name                String
-  company             String
-  blog                String @unique
-  location            String
-  email               String @unique
-  hireable            String @unique
-  bio                 String
-  twitter_username    String @unique
+  site_admin          Boolean
+  name                String?
+  company             String?
+  blog                String
+  location            String?
+  email               String?
+  hireable            String?
+  bio                 String?
+  twitter_username    String?
   public_repos        Int
   public_gists        Int
   followers           Int
   following           Int
-  created_at          String @unique
-  updated_at          String @unique
+  created_at          String
+  updated_at          String
 }

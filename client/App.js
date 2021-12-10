@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  ScrollView,
+} from "react-native";
 
 export default function App() {
   const [username, setUsername] = useState("");
@@ -20,12 +27,16 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Username:</Text>
-      <br />
-      <TextInput onChangeText={setUsername} value={username} />
-      <br />
-      <Button onPress={searchUser} title="Search" />
-      <Text>{user.username}</Text>
+      <ScrollView>
+        <View style={styles.header}>
+          <Text>Username:</Text>
+          <br />
+          <TextInput onChangeText={setUsername} value={username} />
+          <br />
+          <Button onPress={searchUser} title="Search" />
+        </View>
+        <Text>{user.username}</Text>
+      </ScrollView>
     </View>
   );
 }
@@ -36,5 +47,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  header: {
+    flexDirection: "row",
   },
 });
