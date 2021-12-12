@@ -11,8 +11,8 @@ generator client {
 }
 
 model User {
-  login               String  @unique
-  id                  Int     @id
+  login               String   @unique
+  id                  Int      @id
   node_id             String
   avatar_url          String
   gravatar_id         String
@@ -34,7 +34,7 @@ model User {
   blog                String
   location            String?
   email               String?
-  hireable            String?
+  hireable            Boolean?
   bio                 String?
   twitter_username    String?
   public_repos        Int

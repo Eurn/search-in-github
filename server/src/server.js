@@ -8,11 +8,6 @@ export function launch(port) {
   application.use(cors());
 
   application.get("/api/users/:username", async (req, res) => {
-    // Step 1 - Does User exist in our Database
-    //   If True  -> Retrieve from our Database
-    //   If False -> Request Github API https://api.github.com/users/$USERNAME
-    //            -> Store User information in our Database
-
     const prisma = new PrismaClient();
     const { username } = req.params;
     const user = await prisma.user.findFirst({
